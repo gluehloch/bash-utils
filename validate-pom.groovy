@@ -1,3 +1,5 @@
+import groovy.xml.*;
+
 def red() {
     print "\033[31;1m"
 }
