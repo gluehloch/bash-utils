@@ -1,0 +1,111 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <!--
+  <offline/>
+  -->
+
+  <!--
+  <proxies>
+    <proxy>
+      <active>false</active>
+      <protocol>http</protocol>
+      <host>webgate.de.emea.csc.com</host>
+      <port>8080</port>
+    </proxy>
+  </proxies>
+  -->
+  <!--
+  <activeProfiles>
+    <activeProfile>github</activeProfile>
+  </activeProfiles>
+  -->
+
+  <pluginGroups>
+    <pluginGroup>de.gluehloch.plugins</pluginGroup>
+  </pluginGroups>
+  <profiles>
+    <profile>
+      <id>default</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
+      <id>sonar</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <sonar.jdbc.url>jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true</sonar.jdbc.url>
+        <sonar.jdbc.username>sonar</sonar.jdbc.username>
+        <sonar.jdbc.password>sonar</sonar.jdbc.password>
+      </properties>
+    </profile>
+
+    <profile>
+       <id>github</id>
+       <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+       <repositories>
+         <repository>
+           <id>central</id>
+           <url>https://repo1.maven.org/maven2</url>
+           <releases><enabled>true</enabled></releases>
+           <snapshots><enabled>true</enabled></snapshots>
+         </repository>
+       </repositories>
+     </profile>
+     <profile>
+      <id>mavenGluehlochDe</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+        <repository>
+          <id>repositoryMavenGluehlochDe</id>
+          <url>https://maven.gluehloch.de/repository</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+            <checksumPolicy>fail</checksumPolicy>
+            <updatePolicy>always</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <checksumPolicy>fail</checksumPolicy>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+  <!-- Beschreibt die Server fuer das Deployment. -->
+  <servers>
+    <server>
+      <id>github</id>
+      <username>gluehloch</username>
+      <password>19694ce93c4f9cc3f2020df8a8532d13d3788500</password>
+    </server>
+
+    <server>
+      <id>gluehloch-repository</id>
+      <username>gluehloch</username>
+	  <!--
+      <privateKey>C:/development/devtools/cygwin/home/winkler/.ssh/tdkb2/tdkb_gluehloch_id_ecdsa</privateKey>
+	  -->
+      <password>{4baoG9ZIXY8HgC0/t+Yq1kreofEnY99ZXk13yGoVFEghE772d+7phPzEi1n5xwST}</password>
+    </server>
+    <server>
+      <id>gluehloch-repository-snap</id>
+      <username>gluehloch</username>
+	  <!--
+      <privateKey>C:/development/devtools/cygwin/home/winkler/.ssh/tdkb2/tdkb_gluehloch_id_ecdsa</privateKey>
+	  -->
+      <password>{4baoG9ZIXY8HgC0/t+Yq1kreofEnY99ZXk13yGoVFEghE772d+7phPzEi1n5xwST}</password>
+    </server>
+  </servers>
+
+</settings>
