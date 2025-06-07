@@ -41,8 +41,8 @@ sudo tar -xvf apache-tomcat-10.1.41.tar -C /opt/devtools/java/tomcat
 
 sudo wget https://nodejs.org/dist/v22.16.0/node-v22.16.0-linux-x64.tar.xz
 sudo wget https://nodejs.org/dist/v20.19.2/node-v20.19.2-linux-x64.tar.xz
-tar -xf node-v22.16.0-linux-x64.tar.xz -C /opt/devtools/node
-tar -xf node-v20.19.2-linux-x64.tar.xz -C /opt/devtools/node
+sudo tar -xf node-v22.16.0-linux-x64.tar.xz -C /opt/devtools/node
+sudo tar -xf node-v20.19.2-linux-x64.tar.xz -C /opt/devtools/node
 
 sudo chown -R devtools:devtools /opt/devtools
 
@@ -80,3 +80,15 @@ sudo mkdir /var/www/tippdiekistebier-test
 ## ** Verschiedene Umgebungen einricht DEV, TEST, PREP, PROD
 ## * Minecraft installieren
 ## * Domains umziehen / gluehloch => tippdiekistebier.de
+
+sudo apt install mariadb-server
+sudo systemctl enable mariadb
+sudo systemctl start mariadb
+sudo systemctl status mariadb
+sudo mysql_secure_installation
+
+##
+## TDKB3 Läuft in der Timezone UTC
+## clone schonnebeck in der Timezone Europe/Berlin
+## MariaDB läuft in der SYSTEM Timezone
+sudo timedatectl set-timezone UTC
