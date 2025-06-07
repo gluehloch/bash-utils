@@ -81,6 +81,7 @@ sudo mkdir /var/www/tippdiekistebier-test
 ## * Minecraft installieren
 ## * Domains umziehen / gluehloch => tippdiekistebier.de
 
+### MariaDB Installation
 sudo apt install mariadb-server
 sudo systemctl enable mariadb
 sudo systemctl start mariadb
