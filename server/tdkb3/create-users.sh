@@ -71,6 +71,18 @@ sudo mkdir /var/www/tippdiekistebier-dev
 sudo mkdir /var/www/tippdiekistebier-prep
 sudo mkdir /var/www/tippdiekistebier-test
 
+sudo chown -R gluehloch:gluehloch /var/www/cookie.gluehloch
+sudo chown -R gluehloch:gluehloch /var/www/gluehloch
+sudo chown -R gluehloch:gluehloch /var/www/html
+sudo chown -R gluehloch:gluehloch /var/www/lab.gluehloch
+sudo chown -R gluehloch:gluehloch /var/www/maven.gluehloch
+sudo chown -R gluehloch:gluehloch /var/www/maven-snap.gluehloch
+sudo chown -R gluehloch:gluehloch /var/www/projects.gluehloch
+
+sudo chown -R boprod:boprod /var/www/tippdiekistebier
+sudo chown -R boprep:boprep /var/www/tippdiekistebier-prep
+sudo chown -R botest:botest /var/www/tippdiekistebier-test
+sudo chown -R bodev:bodev /var/www/tippdiekistebier-dev
 
 ## * Apache: Alle Domains und Subdomains einrichten
 ## * Let´s encrypt einrichten
