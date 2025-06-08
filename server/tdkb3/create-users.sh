@@ -13,6 +13,7 @@ sudo useradd -m -s /bin/bash tomcat
 mkdir ~/tmp
 mkdir ~/dev
 mkdir ~/projects
+mkdir ~/projects/pom
 mkdir ~/projects/homepage
 mkdir ~/projects/tools
 mkdir ~/projects/betoffice
@@ -61,6 +62,8 @@ eval "$(oh-my-posh init bash)"
 
 cd ~/dev/projects/homepage
 git clone git@github.com:gluehloch/andre-winkler-it.git
+cd ~/dev/projects/pom
+git clone git@github.com:gluehloch/master-pom.git
 
 
 sudo apt install apache2
