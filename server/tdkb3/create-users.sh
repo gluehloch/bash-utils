@@ -105,3 +105,18 @@ sudo mysql_secure_installation
 ## clone schonnebeck in der Timezone Europe/Berlin
 ## MariaDB läuft in der SYSTEM Timezone
 sudo timedatectl set-timezone UTC
+
+### Bash Update
+# Siehe auch https://ohmyposh.dev/docs/installation/linux
+curl -s https://ohmyposh.dev/install.sh | bash -s
+
+oh-my-posh font install
+oh-my-posh font install meslo
+
+### user-profilke spezifische Installationen
+~/.local/bin
+
+### .bashrc extension
+### AWI Extension
+export PATH=$PATH:/home/winkler/.local/bin
+eval "$(oh-my-posh init bash)"
