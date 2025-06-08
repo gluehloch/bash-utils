@@ -1,0 +1,11 @@
+
+export PATH=$PATH:/home/winkler/.local/bin
+eval "$(oh-my-posh init bash)"
+
+export DEVTOOLS_HOME=/opt/devtools
+export NODE_HOME="${DEVTOOLS_HOME}/node/node-v22.16.0-linux-x64"
+export JAVA_HOME="${DEVTOOLS_HOME}/java/jdk/jdk-21.0.7+6"
+export MAVEN_HOME="${DEVTOOLS_HOME}/java/maven/apache-maven-3.9.10"
+
+export OLD_PATH="$PATH"
+export PATH="$JAVA_HOME/bin:$MAVEN_HOME/bin:$NODE_HOME/bin:$PATH"

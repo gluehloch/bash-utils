@@ -13,7 +13,12 @@ sudo useradd -m -s /bin/bash tomcat
 mkdir ~/tmp
 mkdir ~/dev
 mkdir ~/projects
+mkdir ~/projects/homepage
 mkdir ~/projects/tools
+mkdir ~/projects/betoffice
+mkdir ~/projects/betoffice/web
+mkdir ~/projects/betoffice/core
+mkdir ~/projects/betoffice/pom
 mkdir ~/dev/tmp
 
 sudo mkdir /opt/conf
@@ -25,13 +30,13 @@ sudo mkdir /opt/devtools/java/tomcat
 sudo mkdir /opt/devtools/node
 
 cd /opt/devtools
-sudo wget https://aka.ms/download-jdk/microsoft-jdk-21.0.7-linux-aarch64.tar.gz
+sudo wget https://aka.ms/download-jdk/microsoft-jdk-21.0.7-linux-x64.tar.gz
 sudo wget https://download.java.net/java/GA/jdk24.0.1/24a58e0e276943138bf3e963e6291ac2/9/GPL/openjdk-24.0.1_linux-x64_bin.tar.gz
 sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.10/binaries/apache-maven-3.9.10-bin.tar.gz
 sudo wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.41/bin/apache-tomcat-10.1.41.tar.gz
 
-sudo gunzip microsoft-jdk-21.0.7-linux-aarch64.tar.gz -d /opt/devtools/java/jdk
-sudo tar -xvf microsoft-jdk-21.0.7-linux-aarch64.tar -C /opt/devtools/java/jdk
+sudo gunzip microsoft-jdk-21.0.7-linux-x64.tar.gz -d /opt/devtools/java/jdk
+sudo tar -xvf microsoft-jdk-21.0.7-linux-x64.tar -C /opt/devtools/java/jdk
 sudo gunzip openjdk-24.0.1_linux-x64_bin.tar.gz -d /opt/devtools/java/jdk
 sudo tar -xvf openjdk-24.0.1_linux-x64_bin.tar -C /opt/devtools/java/jdk
 sudo gunzip apache-maven-3.9.10-bin.tar.gz -d /opt/devtools/java/maven
@@ -45,6 +50,18 @@ sudo tar -xf node-v22.16.0-linux-x64.tar.xz -C /opt/devtools/node
 sudo tar -xf node-v20.19.2-linux-x64.tar.xz -C /opt/devtools/node
 
 sudo chown -R devtools:devtools /opt/devtools
+
+### bash erweiternh
+### AWI
+if [ -f ~/.bash_awi ]; then
+    . ~/.bash_awi
+fi
+export PATH=$PATH:/home/winkler/.local/bin
+eval "$(oh-my-posh init bash)"
+
+cd ~/dev/projects/homepage
+git clone git@github.com:gluehloch/andre-winkler-it.git
+
 
 sudo apt install apache2
 
@@ -93,6 +110,22 @@ sudo chown -R bodev:bodev /var/www/tippdiekistebier-dev
 ## * Minecraft installieren
 ## * Domains umziehen / gluehloch => tippdiekistebier.de
 
+### gluehloch.schonnebeck
+# C:\windows\System32\drivers\etc\hosts
+192.168.0.121 gluehloch.schonnebeck
+192.168.0.121 cookie.gluehloch.schonnebeck
+192.168.0.121 lab.gluehloch.schonnebeck
+192.168.0.121 maven.gluehloch.schonnebeck
+192.168.0.121 maven-snap.gluehloch.schonnebeck
+192.168.0.121 projects.gluehloch.schonnebeck
+
+192.168.0.121 tippdiekistebier.schonnebeck
+192.168.0.121 tippdiekistebier.schonnebeck
+192.168.0.121 dev.tippdiekistebier.schonnebeck
+192.168.0.121 test.tippdiekistebier.schonnebeck
+192.168.0.121 prep.tippdiekistebier.schonnebeck
+192.168.0.121 tippdiekistebier.schonnebeck
+
 ### MariaDB Installation
 sudo apt install mariadb-server
 sudo systemctl enable mariadb
@@ -108,6 +141,8 @@ sudo timedatectl set-timezone UTC
 
 ### Bash Update
 # Siehe auch https://ohmyposh.dev/docs/installation/linux
+sudo apt install net-tools
+sudo apt install curl
 curl -s https://ohmyposh.dev/install.sh | bash -s
 
 oh-my-posh font install
