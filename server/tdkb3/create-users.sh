@@ -64,7 +64,15 @@ cd ~/dev/projects/homepage
 git clone git@github.com:gluehloch/andre-winkler-it.git
 cd ~/dev/projects/pom
 git clone git@github.com:gluehloch/master-pom.git
-
+cd ~/dev/projects/betoffice/pom
+git clone git@github.com:gluehloch/bo-pom.git
+cd ~/dev/projects/betoffice/core
+git clone git@github.com:gluehloch/bo-testutils.git
+git clone git@github.com:gluehloch/bo-storage.git
+git clone git@github.com:gluehloch/bo-openligadb.git
+cd ~/dev/projects/betoffice/web
+git clone git@github.com:gluehloch/bo-rest.git
+git clone git@github.com:gluehloch/bo-frontend.git
 
 sudo apt install apache2
 
@@ -79,6 +87,7 @@ sudo certbot --apache
 
 ## Apache: Verzeichnisse anlegen
 sudo mkdir /var/www
+sudo mkdir /var/www/andre-winkler
 sudo mkdir /var/www/cookie.gluehloch
 sudo mkdir /var/www/gluehloch
 sudo mkdir /var/www/html
@@ -91,6 +100,7 @@ sudo mkdir /var/www/tippdiekistebier-dev
 sudo mkdir /var/www/tippdiekistebier-prep
 sudo mkdir /var/www/tippdiekistebier-test
 
+sudo chown -R winker:winkler /var/www/andre-winkler
 sudo chown -R gluehloch:gluehloch /var/www/cookie.gluehloch
 sudo chown -R gluehloch:gluehloch /var/www/gluehloch
 sudo chown -R gluehloch:gluehloch /var/www/html
@@ -104,6 +114,15 @@ sudo chown -R boprep:boprep /var/www/tippdiekistebier-prep
 sudo chown -R botest:botest /var/www/tippdiekistebier-test
 sudo chown -R bodev:bodev /var/www/tippdiekistebier-dev
 
+### Apachae enable site 
+# To enable an Apache2 site using a2ensite, navigate to the sites-available directory,
+# and run the command a2ensite <site_name>, where <site_name> is the name of your site's
+# configuration file without the .conf extension.
+# Then, reload Apache using sudo service apache2 reload. 
+cd /etc/apache2/sites-available
+sudo a2ensite andre-winkler.conf
+sudo systemctl reload apache2
+
 ## * Apache: Alle Domains und Subdomains einrichten
 ## * Let´s encrypt einrichten
 ## * TOMCAT installieren
@@ -115,6 +134,8 @@ sudo chown -R bodev:bodev /var/www/tippdiekistebier-dev
 
 ### gluehloch.schonnebeck
 # C:\windows\System32\drivers\etc\hosts
+192.168.0.121 andre-winkler.schonnebeck
+
 192.168.0.121 gluehloch.schonnebeck
 192.168.0.121 cookie.gluehloch.schonnebeck
 192.168.0.121 lab.gluehloch.schonnebeck
