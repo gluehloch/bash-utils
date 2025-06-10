@@ -120,7 +120,19 @@ sudo chown -R bodev:bodev /var/www/tippdiekistebier-dev
 # configuration file without the .conf extension.
 # Then, reload Apache using sudo service apache2 reload. 
 cd /etc/apache2/sites-available
+
 sudo a2ensite andre-winkler.conf
+sudo a2ensite cookie.gluehloch.conf
+sudo a2ensite gluehloch.conf
+sudo a2ensite lab.gluehloch.conf
+sudo a2ensite maven.gluehloch.conf
+sudo a2ensite maven-snap.gluehloch.conf
+sudo a2ensite projects.gluehloch.conf
+sudo a2ensite tippdiekistebier.conf
+sudo a2ensite dev.tippdiekistebier.conf
+sudo a2ensite prep.tippdiekistebier.conf
+sudo a2ensite test.tippdiekistebier.conf
+
 sudo systemctl reload apache2
 
 ## * Apache: Alle Domains und Subdomains einrichten
