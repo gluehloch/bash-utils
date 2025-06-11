@@ -177,6 +177,9 @@ sudo chown devtools:devtools tomcat-prod
 ### Tomcat als SYstemd Service
 # /etc/systemd/system
 sudo cp server/tdkb3/tomcat/tomcat.service /etc/systemd/tomcat.service
+sudo systemctl daemon-reload
+sudo systemctl enable tomcat.service
+# TODO Failed to enable unit: Unit file tomcat.service does not exist
 
 
 ##
