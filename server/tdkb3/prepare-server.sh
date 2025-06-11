@@ -169,6 +169,14 @@ sudo systemctl start mariadb
 sudo systemctl status mariadb
 sudo mysql_secure_installation
 
+### Tomcat Installation / Software Package ist bereits ausgepackt
+cd /opt/devtools/java/tomcat
+sudo ln -s /opt/devtools/java/tomcat/apache-tomcat-10.1.41 tomcat-prod
+sudo chown devtools:devtools tomcat-prod
+
+### Tomcat als SYstemd Service
+# /etc/systemd/system
+
 ##
 ## TDKB3 Läuft in der Timezone UTC
 ## clone schonnebeck in der Timezone Europe/Berlin
