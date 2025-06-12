@@ -6,7 +6,7 @@ Before=shutdown.target
 [Service]
 Type=forking
 
-Environment=JAVA_HOME=/opt/devtools/java/jdk-21.0.7+6
+Environment=JAVA_HOME=/opt/devtools/java/jdk/jdk-21.0.7+6
 Environment=CATALINA_PID=/opt/devtools/java/tomcat/tomcat-prod/temp/tomcat.pid
 Environment=CATALINA_HOME=/opt/devtools/java/tomcat/tomcat-prod
 Environment=CATALINA_BASE=/opt/devtools/java/tomcat/tomcat-prod
