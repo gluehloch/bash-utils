@@ -10,6 +10,8 @@ sudo useradd -m -s /bin/bash mariadb
 sudo useradd -m -s /bin/bash minecraft
 sudo useradd -m -s /bin/bash tomcat
 
+# sudo passwd USERNAME
+
 mkdir ~/tmp
 mkdir ~/dev
 mkdir ~/projects
@@ -20,6 +22,7 @@ mkdir ~/projects/betoffice
 mkdir ~/projects/betoffice/web
 mkdir ~/projects/betoffice/core
 mkdir ~/projects/betoffice/pom
+mkdir ~/projects/lab
 mkdir ~/dev/tmp
 
 sudo mkdir /opt/conf
@@ -73,6 +76,9 @@ git clone git@github.com:gluehloch/bo-openligadb.git
 cd ~/dev/projects/betoffice/web
 git clone git@github.com:gluehloch/bo-rest.git
 git clone git@github.com:gluehloch/bo-frontend.git
+cd ~/dev/projects/lab
+git clone git@github.com:gluehloch/registrationservice.git register
+
 
 sudo apt install apache2
 
@@ -144,7 +150,7 @@ sudo systemctl reload apache2
 ## * Minecraft installieren
 ## * Domains umziehen / gluehloch => tippdiekistebier.de
 
-### gluehloch.schonnebeck
+### gluehloch.schonnebeck | 192.168.0.121
 # C:\windows\System32\drivers\etc\hosts
 192.168.0.121 andre-winkler.schonnebeck
 
@@ -204,3 +210,10 @@ oh-my-posh font install meslo
 ### AWI Extension
 export PATH=$PATH:/home/winkler/.local/bin
 eval "$(oh-my-posh init bash)"
+
+sudo mkdir /opt/conf
+sudo mkdir /opt/conf/betoffice
+sudo mkdir /opt/conf/register
+
+sudo chown -R tomcat:tomcat /opt/conf
+sudo adduser winkler tomcat
