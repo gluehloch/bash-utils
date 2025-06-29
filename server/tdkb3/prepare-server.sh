@@ -217,3 +217,65 @@ sudo mkdir /opt/conf/register
 
 sudo chown -R tomcat:tomcat /opt/conf
 sudo adduser winkler tomcat
+
+### Database Backup
+# mariadb user einloggen 
+mkdir ~/.local
+mkdir ~/.local/bin
+mkdir ~/backup
+
+* Daily database backup
+
+  Editieren der crontab Einträge für einen User:
+
++------------------------------------------------------------------------------+
+crontab -e
++------------------------------------------------------------------------------+
+
+  Das Skript möchte ich einmal täglich um 20:20 Uhr ausführen lassen. Dazu
+  eignet sich ein CRON Job am besten. Die Steuerung erfolgt über die
+  folgenden Befehle:
+  
+  * Auflisten aller crontab Einträge für einen User:
+
++------------------------------------------------------------------------------+
+crontab -l
++------------------------------------------------------------------------------+
+
+  * Für mein Backup Skript habe ich die folgende Zeiteinteilung gewählt:
+
++------------------------------------------------------------------------------+
+# m h  dom mon dow   command
+20 20 * * * /home/betoffice/bin/backup_betoffice.sh
++------------------------------------------------------------------------------+
+  
+  []
+
+  Dabei haben die Spalten in der crontab die folgende Bedeutung:
+ 
+  * 1. Spalte - Minute
+    0-59 (mehrere Minuten-Angaben mit Komma, z.B. 0,30 für xx:00 und xx:30 Uhr) 
+    * für alle Minuten 
+    */5 für alle 5 Minuten (also xx:00, xx:05, xx:10 Uhr, usw.) 
+
+  * 2. Spalte - Stunde
+    0-23 (mehrere Stunden-Angaben mit Komma, z.B. 10,13,17 für 10:xx, 13:xx und 17:xx Uhr) 
+    * für alle Stunden 
+    */4 für alle 4 Stunden (also 00:xx, 04:xx, 08:xx, 12:xx, 16:xx und 20:xx Uhr) 
+
+  * 3. Spalte - Tag im Monat
+    1-31 
+    * für jeden Tag 
+
+  * 4. Spalte - Monat
+    1-12 
+    * für jeden Monat 
+
+  * 5. Spalte - Wochentag
+    0-7 (0 und 7 stehen für Sonntag, 1 für Montag, usw.) 
+    * für jeden Wochentag 
+
+  []
+  
+  * Damit die Backup-Dateien auf einen anderen Rechner gespiegel werden,
+    kann man den folgenden Befehl verwenden:
