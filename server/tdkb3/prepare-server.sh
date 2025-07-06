@@ -37,7 +37,7 @@ cd /opt/devtools
 sudo wget https://aka.ms/download-jdk/microsoft-jdk-21.0.7-linux-x64.tar.gz
 sudo wget https://download.java.net/java/GA/jdk24.0.1/24a58e0e276943138bf3e963e6291ac2/9/GPL/openjdk-24.0.1_linux-x64_bin.tar.gz
 sudo wget https://dlcdn.apache.org/maven/maven-3/3.9.10/binaries/apache-maven-3.9.10-bin.tar.gz
-sudo wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.41/bin/apache-tomcat-10.1.41.tar.gz
+sudo wget https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.43/bin/apache-tomcat-10.1.43.tar.gz
 
 sudo gunzip microsoft-jdk-21.0.7-linux-x64.tar.gz -d /opt/devtools/java/jdk
 sudo tar -xvf microsoft-jdk-21.0.7-linux-x64.tar -C /opt/devtools/java/jdk
@@ -45,8 +45,8 @@ sudo gunzip openjdk-24.0.1_linux-x64_bin.tar.gz -d /opt/devtools/java/jdk
 sudo tar -xvf openjdk-24.0.1_linux-x64_bin.tar -C /opt/devtools/java/jdk
 sudo gunzip apache-maven-3.9.10-bin.tar.gz -d /opt/devtools/java/maven
 sudo tar -xvf apache-maven-3.9.10-bin.tar -C /opt/devtools/java/maven
-sudo gunzip apache-tomcat-10.1.41.tar.gz -d /opt/devtools/java/tomcat
-sudo tar -xvf apache-tomcat-10.1.41.tar -C /opt/devtools/java/tomcat
+sudo gunzip apache-tomcat-10.1.43.tar.gz -d /opt/devtools/java/tomcat
+sudo tar -xvf apache-tomcat-10.1.43.tar -C /opt/devtools/java/tomcat
 
 sudo wget https://nodejs.org/dist/v22.16.0/node-v22.16.0-linux-x64.tar.xz
 sudo wget https://nodejs.org/dist/v20.19.2/node-v20.19.2-linux-x64.tar.xz
