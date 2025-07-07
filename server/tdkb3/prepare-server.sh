@@ -14,15 +14,15 @@ sudo useradd -m -s /bin/bash tomcat
 
 mkdir ~/tmp
 mkdir ~/dev
-mkdir ~/projects
-mkdir ~/projects/pom
-mkdir ~/projects/homepage
-mkdir ~/projects/tools
-mkdir ~/projects/betoffice
-mkdir ~/projects/betoffice/web
-mkdir ~/projects/betoffice/core
-mkdir ~/projects/betoffice/pom
-mkdir ~/projects/lab
+mkdir ~/dev/projects
+mkdir ~/dev/projects/pom
+mkdir ~/dev/projects/homepage
+mkdir ~/dev/projects/tools
+mkdir ~/dev/projects/betoffice
+mkdir ~/dev/projects/betoffice/web
+mkdir ~/dev/projects/betoffice/core
+mkdir ~/dev/projects/betoffice/pom
+mkdir ~/dev/projects/lab
 mkdir ~/dev/tmp
 
 sudo mkdir /opt/conf
