@@ -11,18 +11,21 @@ sudo useradd -m -s /bin/bash minecraft
 sudo useradd -m -s /bin/bash tomcat
 
 # sudo passwd USERNAME
+# Beispiel ssh key generator plus copy to remote server
+ssh-keygen -t ed25519 -C "<email@address>"
+ssh-copy-id -i tdkb3-gluehloch.pub gluehloch@gluehloch.de
 
 mkdir ~/tmp
 mkdir ~/dev
-mkdir ~/projects
-mkdir ~/projects/pom
-mkdir ~/projects/homepage
-mkdir ~/projects/tools
-mkdir ~/projects/betoffice
-mkdir ~/projects/betoffice/web
-mkdir ~/projects/betoffice/core
-mkdir ~/projects/betoffice/pom
-mkdir ~/projects/lab
+mkdir ~/dev/projects
+mkdir ~/dev/projects/pom
+mkdir ~/dev/projects/homepage
+mkdir ~/dev/projects/tools
+mkdir ~/dev/projects/betoffice
+mkdir ~/dev/projects/betoffice/web
+mkdir ~/dev/projects/betoffice/core
+mkdir ~/dev/projects/betoffice/pom
+mkdir ~/dev/projects/lab
 mkdir ~/dev/tmp
 
 sudo mkdir /opt/conf
