@@ -10,10 +10,33 @@ sudo useradd -m -s /bin/bash mariadb
 sudo useradd -m -s /bin/bash minecraft
 sudo useradd -m -s /bin/bash tomcat
 
+sudo groupadd webapp
+
 # sudo passwd USERNAME
 # Beispiel ssh key generator plus copy to remote server
 ssh-keygen -t ed25519 -C "<email@address>"
 ssh-copy-id -i tdkb3-gluehloch.pub gluehloch@gluehloch.de
+
+sudo usermod -a -G bodev winkler
+sudo usermod -a -G botest winkler
+sudo usermod -a -G boprep winkler
+sudo usermod -a -G boprod winkler
+
+# Alle neuen/geänderten Dateien erhalten das Gruppenattribut "bodev"
+sudo chgrp bodev /var/www/tippdiekistebier-dev
+sudo chmod g+s /var/www/tippdiekistebier-dev
+
+sudo chgrp botest /var/www/tippdiekistebier-test
+sudo chmod g+s /var/www/tippdiekistebier-test
+
+sudo chgrp boprep /var/www/tippdiekistebier-prep
+sudo chmod g+s /var/www/tippdiekistebier-prep
+
+sudo chgrp boprod /var/www/tippdiekistebier
+sudo chmod g+s /var/www/tippdiekistebier
+
+sudo chgrp webapp /opt/devtools/java/tomcat/<tomcat-version>/webapps
+sudo chmod g+s /opt/devtools/java/tomcat/<tomcat-version>/webapps
 
 mkdir ~/tmp
 mkdir ~/dev
