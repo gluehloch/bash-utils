@@ -1,7 +1,8 @@
 #Organize Import Order
-#Sat Jul 05 21:28:12 CEST 2025
-0=java
-1=javax
-2=jakarta
-3=org
-4=com
+#Thu Aug 07 09:21:40 CEST 2025
+0=\#org.assertj
+1=java
+2=javax
+3=jakarta
+4=org
+5=com
