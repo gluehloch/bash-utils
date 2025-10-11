@@ -1,11 +1,18 @@
-
-export PATH=$PATH:/home/winkler/.local/bin
-eval "$(oh-my-posh init bash)"
-
+#/bin/bash
 export DEVTOOLS_HOME=/opt/devtools
 export NODE_HOME="${DEVTOOLS_HOME}/node/node-v22.16.0-linux-x64"
-export JAVA_HOME="${DEVTOOLS_HOME}/java/jdk/jdk-21.0.7+6"
-export MAVEN_HOME="${DEVTOOLS_HOME}/java/maven/apache-maven-3.9.10"
+export JAVA_HOME_21="${DEVTOOLS_HOME}/java/jdk/jdk-21.0.7+6"
+export JAVA_HOME_25="${DEVTOOLS_HOME}/java/jdk/jdk-25"
+export MAVEN_HOME_3_9_10="${DEVTOOLS_HOME}/java/maven/apache-maven-3.9.10"
+export MAVEN_HOME_3_9_11="${DEVTOOLS_HOME}/java/maven/apache-maven-3.9.11"
 
-export OLD_PATH="$PATH"
-export PATH="$JAVA_HOME/bin:$MAVEN_HOME/bin:$NODE_HOME/bin:$PATH"
+export JAVA_HOME=$JAVA_HOME_21
+export MAVEN_HOME=$MAVEN_HOME_3_9_10
+
+export PATH_DEFAULT="$NODE_HOME/bin:/home/winkler/.local/bin:$PATH"
+export PATH="$JAVA_HOME/bin:$MAVEN_HOME/bin:$PATH_DEFAULT"
+
+eval "$(oh-my-posh init bash)"
+
+alias j21="export JAVA_HOME=$JAVA_HOME_21;export MAVEN_HOME=$MAVEN_HOME_3_9_10;source javapath.sh"
+alias j25="export JAVA_HOME=$JAVA_HOME_25;export MAVEN_HOME=$MAVEN_HOME_3_9_11;source javapath.sh"
