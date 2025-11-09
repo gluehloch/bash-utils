@@ -59,6 +59,13 @@ sudo mkdir /opt/devtools/java/maven
 sudo mkdir /opt/devtools/java/tomcat
 sudo mkdir /opt/devtools/node
 
+ ln -s /var/www/tippdiekistebier-dev/ www-tdkb-dev
+ ln -s /var/www/tippdiekistebier-dev www-tdkb-dev
+ ln -s /var/www/tippdiekistebier-test www-tdkb-test
+ ln -s /var/www/tippdiekistebier-prep www-tdkb-prep
+ ln -s /var/www/tippdiekistebier www-tdkb-prod
+ ln -s /opt/devtools/java/tomcat/tomcat-prod/webapps tomcat-prod-webapp
+
 cd /opt/devtools
 sudo wget https://aka.ms/download-jdk/microsoft-jdk-21.0.7-linux-x64.tar.gz
 sudo wget https://download.java.net/java/GA/jdk24.0.1/24a58e0e276943138bf3e963e6291ac2/9/GPL/openjdk-24.0.1_linux-x64_bin.tar.gz
@@ -187,7 +194,6 @@ sudo systemctl reload apache2
 192.168.0.121 maven-snap.gluehloch.schonnebeck
 192.168.0.121 projects.gluehloch.schonnebeck
 
-192.168.0.121 tippdiekistebier.schonnebeck
 192.168.0.121 tippdiekistebier.schonnebeck
 192.168.0.121 dev.tippdiekistebier.schonnebeck
 192.168.0.121 test.tippdiekistebier.schonnebeck
