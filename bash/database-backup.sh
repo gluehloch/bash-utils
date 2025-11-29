@@ -18,7 +18,7 @@ databaseImport() {
     # Virtual Box | betoffice development server
     # /bin/mysql -u betofficesu --password=betoffice -D betoffice -h 192.168.0.136 < "$IMPORT_FILE"
     # Docker | betofficedb
-    /bin/mysql -u $2 --password=$3 -D $4 -h 127.0.0.1 < $IMPORT_FILE
+    /bin/mysql -f -u $2 --password=$3 -D $4 -h 127.0.0.1 < $IMPORT_FILE
 
     if [ $? -eq 0 ]
     then
