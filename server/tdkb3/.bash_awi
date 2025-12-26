@@ -1,4 +1,6 @@
 #/bin/bash
+export TZ=Europe/Berlin
+
 export DEVTOOLS_HOME=/opt/devtools
 export NODE_HOME="${DEVTOOLS_HOME}/node/node-v22.16.0-linux-x64"
 export JAVA_HOME_21="${DEVTOOLS_HOME}/java/jdk/jdk-21.0.7+6"
